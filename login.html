@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="favicon" href="favicon.png">
+  <title>Web Weaver</title>
+</head>
+<body class="fade-in">
+  <video autoplay loop muted playsinline>
+    <source src="backgroundVideo1.mp4" type="video/mp4">
+  </video>
+
+  <img src="logo.png" alt="logo" class="logo" width="150" height="150">
+
+  <a href="signup.html">Sign in</a>
+  <a href="login.html">Log in</a>
+
+  <div class="container"> <!--All inputs and buttons are within this div-->
+    <form action="#">
+      <div>   
+        <div class="input email">
+          <input type="email" name="email" id="emailIcon" required>
+          <div class="error-message" id="email-error">Please enter a valid email address.</div>
+        </div>
+        
+        <div class="input password">
+          <input type="password" name="password1" id="passwordIcon" required>
+          <div class="error-message" id="password-error">This field is required.</div>
+        </div>
+      </div>
+      <div>
+        <button id="submit-button" type="button">Enter</button>
+      </div>
+    </form>
+  </div>
+
+  <video src=""></video>
+</body>
+
+<script>
+document.getElementById('submit-button').addEventListener('click', function() {
+  const form = document.querySelector('form');
+  const emailInput = document.getElementById('emailIcon');
+  const passwordInput = document.getElementById('passwordIcon');
+  const emailError = document.getElementById('email-error');
+  const passwordError = document.getElementById('password-error');
+  let isValid = true;
+
+  /*
+  *check validity of the inputs
+  */
+  
+  if (!emailInput.value.trim() || !emailInput.validity.valid) {
+    emailError.style.display = 'block';
+    isValid = false;
+  } else {
+    emailError.style.display = 'none';
+  }
+  
+  if (!passwordInput.value.trim()) {
+    passwordError.style.display = 'block';
+    isValid = false;
+  } else {
+    passwordError.style.display = 'none';
+  }
+  
+  if (isValid) {
+    form.submit();
+  }
+});
+</script>
+</html>

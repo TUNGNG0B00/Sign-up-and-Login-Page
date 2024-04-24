@@ -1,0 +1,152 @@
+/* Importing a custom Google Font, Orbitron, for styling */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+/* Styling for the body, setting font and text color */
+body {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+}
+
+/* Input field styling with email icon */
+.input.email {
+    background-image: url('emailIcon.png'); /* Icon image */
+    background-repeat: no-repeat; /* Prevents repeating the background image */
+    background-size: 30px 23px; /* Sets the size of the icon */
+    background-position: 10px center; /* Positions the icon */
+}
+
+/* Input field styling with password icon */
+.input.password {
+    background-image: url('passwordIcon.png');
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    background-position: 10px center;
+}
+
+/* Transparent background for icons in input fields */
+input#emailIcon, input#passwordIcon {
+    background: transparent;
+    padding-top: 35px;
+}
+
+/* Fullscreen background video styling */
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire element */
+    z-index: -1; /* Puts the video behind other content */
+    background-color: rgba(0, 0, 0, 0.67); /* Semi-transparent black background */
+}
+
+/* Styling for links */
+a {
+    list-style: none;
+    float: right;
+    color: white;
+    text-decoration: none;
+    padding: 30px;
+    font-weight: bolder;
+    position: relative;
+}
+
+/* Container styling for centralized content */
+.container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 70px;
+    border-radius: 5px;
+}
+
+/* Header style */
+h2 {
+    text-align: center;
+}
+
+/* Form styling */
+form {
+    margin-top: 0px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    padding: 5px;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    padding-bottom: 20px;
+    text-indent: 60px;
+}
+
+/* Styling for error messages */
+.error-message {
+    color: red;
+    display: none; /* Initially hidden */
+}
+
+/* Submit button styling */
+#submit-button {
+    margin-top: 40px;
+    display: block;
+    width: 105%;
+    border: none;
+    padding: 10px;
+    background-color: #1e2b43;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+#submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Removes focus outline for cleaner styling */
+input:focus {
+    outline: none;
+}
+
+/* Fade-in animation for transitions */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 0.9s ease-in forwards;
+}
+@keyframes fadeInAnimation {
+    from { opacity: 0.1; }
+    to { opacity: 1; }
+}
+
+/* Underline animation for links on hover */
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
+}
+a:hover::after {
+    width: 100%;
+}
+
+/* Styling to prevent color changes when input autofills */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+input:focus::placeholder {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: white !important;
+}
